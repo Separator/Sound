@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>SoundLib</title>
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <!-- COMMON LIBS -->
+        <script type="text/javascript" src="js/common/jquery.js"></script>
+        <script type="text/javascript" src="js/common/underscore.js"></script>
+
+        <!-- assets -->
+        <script type="text/javascript" src="js/libs/assets.js"></script>
+
+        <!-- sound -->
+        <script type="text/javascript" src="js/libs/sound.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                Common = {};
+                Common['Assets'] = new Assets({
+                    'itemHandlers': {
+                        'sounds': function(items) {
+                            Common['Sound'] = new Sound({
+                                'sounds': items
+                            });
+                            var id = Common['Sound'].appendToPlayList({library:'other',sound:'laser_canon.mp3',repeat:3,delay:2000});
+                            /*setTimeout(function() {
+                                Common['Sound'].removeFromPlayList(id);
+                            }, 500);*/
+                            //Common['Sound'].play('other','laser_canon.mp3');
+                        }
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+</html>
