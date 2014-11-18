@@ -67,6 +67,7 @@ function Sound(options) {
                         };
                         break;
                 };
+                var sound = list[backgroundMusic['index']];
                 backgroundMusic['sound']['src'] = sounds[sound['library']][sound['sound']]['src'];
                 backgroundMusic['sound'].play();
             }, false);
